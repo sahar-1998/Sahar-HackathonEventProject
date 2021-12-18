@@ -3,6 +3,7 @@ import 'package:evemts/screens/auth/login_screen.dart';
 import 'package:evemts/screens/events/cat_event.dart';
 import 'package:evemts/screens/events/categoury_screen.dart';
 import 'package:evemts/screens/events/event_screen.dart';
+import 'package:evemts/screens/auth/launch_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -20,8 +21,10 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       builder:()=>
        MaterialApp(
-        initialRoute:'/signin_screen' ,
+         debugShowCheckedModeBanner: false,
+        initialRoute:'/launch_screen' ,
         routes: {
+          '/launch_screen' : (context)=> LaunchScreen(),
           '/signin_screen': (context) => Signin(),
           '/categoryScreen' : (context) => CategoryScreen(),
           '/new_event' :(context) =>AddEvent(),

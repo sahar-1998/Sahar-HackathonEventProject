@@ -74,7 +74,7 @@ class _SigninState extends State<Signin> with ApiHelper {
                 SizedBox(
                   height: 50.h,
                 ),
-                Align(
+                const Align(
                     alignment: Alignment.topLeft,
                     child: Text(
                       'Phone',
