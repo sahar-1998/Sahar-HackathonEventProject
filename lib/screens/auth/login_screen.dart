@@ -41,7 +41,9 @@ class _SigninState extends State<Signin> with ApiHelper {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: 160,),
+                SizedBox(
+                  height: 160,
+                ),
                 Text(
                   'UCAS EVENTS ',
                   style: TextStyle(
@@ -49,9 +51,11 @@ class _SigninState extends State<Signin> with ApiHelper {
                       fontSize: 35,
                       color: Color(0xff253975)),
                 ),
-                SizedBox(height: 25,),
+                SizedBox(
+                  height: 25,
+                ),
                 Container(
-                  margin: EdgeInsets.only(right: 185),
+                  margin: EdgeInsets.only(right: 205),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -65,7 +69,7 @@ class _SigninState extends State<Signin> with ApiHelper {
                       Text(
                         'Login with',
                         style: TextStyle(
-                            fontSize: 22.sp,
+                            fontSize: 22,
                             fontWeight: FontWeight.bold,
                             color: Color(0xff253975),
                             fontFamily: 'Roboto'),
@@ -74,16 +78,19 @@ class _SigninState extends State<Signin> with ApiHelper {
                   ),
                 ),
                 SizedBox(
-                  height: 50.h,
+                  height: 40,
                 ),
                 const Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      'Phone',
-                      style: TextStyle(
-                        color: Colors.black,
-                      ),
-                    )),
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    'Phone',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                      fontFamily: 'Roboto',
+                    ),
+                  ),
+                ),
                 AppTextField(
                   hint: 'Enter your phone ',
                   controller: _phoneTextEditingController,
@@ -92,28 +99,35 @@ class _SigninState extends State<Signin> with ApiHelper {
                 SizedBox(
                   height: 16.h,
                 ),
-                Align(
-                    alignment: Alignment.topLeft,
-                    child: Text('Password',
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.w500))),
+                const Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    'Password',
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
                 AppTextField(
-                  hint: 'password',
+                  hint: '*********',
                   controller: _passwordTextEditingController,
                   obscureText: true,
                 ),
                 SizedBox(
-                  height: 80.h,
+                  height: 70,
                 ),
-
                 ElevatedButton(
                   onPressed: () async => await performLogin(),
-                  child: Text('Sign in'),
+                  child: const Text(
+                    'Sign in',
+                    style: TextStyle(fontSize: 15, fontFamily: 'Roboto'),
+                  ),
                   style: ElevatedButton.styleFrom(
                     primary: Color(0xff253975),
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                    minimumSize: const Size(300, 64),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    minimumSize: const Size(300, 48),
                   ),
                 )
               ],

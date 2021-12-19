@@ -25,7 +25,7 @@ class AppTextField extends StatelessWidget {
       keyboardType: keyboardType,
       decoration: InputDecoration(
           hintText: hint,
-          hintStyle: TextStyle(fontFamily: 'Roboto'),
+          hintStyle: const TextStyle(fontFamily: 'Roboto', fontSize: 12),
          // prefixIcon: Icon(prefixIcon , color: Colors.black,),
           enabledBorder: border(),
           focusedBorder: border(borderColor: Colors.black)
@@ -39,7 +39,7 @@ class AppTextField extends StatelessWidget {
         color: borderColor,
         width: 1,
       ),
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadius.circular(20),
     );
   }
 }
