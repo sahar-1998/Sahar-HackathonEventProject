@@ -41,35 +41,37 @@ class _SigninState extends State<Signin> with ApiHelper {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                //SizedBox(height: 160,),
+                SizedBox(height: 160,),
                 Text(
                   'UCAS EVENTS ',
                   style: TextStyle(
-                      fontFamily: 'Pacifi',
-                      fontSize: 35.sp,
-                      color: Colors.blue),
+                      fontFamily: 'Pacifico',
+                      fontSize: 35,
+                      color: Color(0xff253975)),
                 ),
-
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Welcome back',
-                      style: TextStyle(
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xff253975),
-                          fontFamily: 'Roboto'),
-                    ),
-                    Text(
-                      'Login with',
-                      style: TextStyle(
-                          fontSize: 22.sp,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xff253975),
-                          fontFamily: 'Roboto'),
-                    ),
-                  ],
+                SizedBox(height: 25,),
+                Container(
+                  margin: EdgeInsets.only(right: 185),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Welcome to back',
+                        style: TextStyle(
+                            fontSize: 11,
+                            color: Color(0xff253975),
+                            fontFamily: 'Cairo'),
+                      ),
+                      Text(
+                        'Login with',
+                        style: TextStyle(
+                            fontSize: 22.sp,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff253975),
+                            fontFamily: 'Roboto'),
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: 50.h,
