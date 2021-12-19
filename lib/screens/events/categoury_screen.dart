@@ -34,15 +34,27 @@ class _CategoryScreenState extends State<CategoryScreen> {
             Text(
               'Categories',
               style: TextStyle(
-                color: Colors.black,
+                fontSize: 19,
+                color: Color(0xff1B2D49),
+                fontFamily: 'Cairo',
+                fontWeight: FontWeight.w900,
               ),
             ),
             // I
-            IconButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/new_event');
-              },
-              icon: Icon(Icons.add),
+            Container(
+              padding: EdgeInsets.all(0),
+              decoration: BoxDecoration(
+                  color: Colors.grey.withOpacity(0.1),
+                  borderRadius: BorderRadius.circular(15)),
+              child: IconButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/new_event');
+                },
+                icon: Icon(
+                  Icons.add,
+                  color: Color(0xff1B2D49),
+                ),
+              ),
             ),
           ],
         ),
@@ -74,32 +86,54 @@ class _CategoryScreenState extends State<CategoryScreen> {
                         Navigator.pushNamed(context, '/event_screen');
                       },
                       child: Container(
-                        height: 80,
+                        padding: EdgeInsets.all(7),
+                        color: Colors.white.withOpacity(0.1),
+                        //  height:150,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Stack(
                               alignment: AlignmentDirectional.bottomCenter,
                               children: [
-                                CachedNetworkImage(
-                                  imageUrl: _categories[index].image,
+                                Container(
+                                  height: 120,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(10),
+                                    child: CachedNetworkImage(
+                                      imageUrl: _categories[index].image,
+                                      height: double.infinity,
+                                      fit: BoxFit.cover,
+                                      width: double.infinity,
+                                    ),
+                                  ),
                                 ),
                                 Container(
                                   margin: const EdgeInsets.only(right: 55),
-                                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 5),
                                   height: 20,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
-                                    color: Colors.black.withOpacity(0.3),
+                                    color: Color(0xff707070).withOpacity(0.3),
                                   ),
                                   width: 70,
                                   child: Text(
                                     '${_categories[index].eventsCount.toString()} Events',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontFamily: 'Cairo'),
                                   ),
                                 ),
                               ],
                             ),
-                            Text(_categories[index].nameEn),
+                            Text(
+                              _categories[index].nameEn,
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  fontFamily: 'Roboto',
+                                  color: Color(0xff423E5B)),
+                            ),
                           ],
                         ),
                       ),
