@@ -1,9 +1,10 @@
 import 'package:evemts/prefs/shared_pref_controller.dart';
 import 'package:evemts/screens/auth/login_screen.dart';
 import 'package:evemts/screens/auth/out_boarding_screen.dart';
-import 'package:evemts/screens/events/cat_event.dart';
+import 'package:evemts/screens/events/cat_details.dart';
 import 'package:evemts/screens/events/categoury_screen.dart';
-import 'package:evemts/screens/events/event_screen.dart';
+import 'package:evemts/screens/events/event_detail.dart';
+import 'package:evemts/screens/events/add_event_screen.dart';
 import 'package:evemts/screens/auth/launch_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -30,7 +31,8 @@ class MyApp extends StatelessWidget {
           '/signin_screen': (context) => Signin(),
           '/categoryScreen' : (context) => CategoryScreen(),
           '/new_event' :(context) =>AddEvent(),
-          '/event_screen':(context)=> EventScreen(),
+          '/event_details':(context)=> EventDetailes(),
+          '/cat_details' :(context)=> CategoryDetailsScreen(),
         },
 
         home:  Signin(),

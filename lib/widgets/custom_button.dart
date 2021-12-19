@@ -18,7 +18,7 @@ class CustomButton extends StatelessWidget {
           primary: color,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20)),
-          minimumSize: const Size(300, 64),
+          minimumSize: const Size(300, 48),
         ),
         onPressed: () {
           onPress();

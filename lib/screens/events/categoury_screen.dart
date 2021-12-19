@@ -83,7 +83,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                         borderRadius: BorderRadius.circular(10)),
                     child: InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, '/event_screen');
+                        Navigator.pushNamed(context, '/cat_details');
                       },
                       child: Container(
                         padding: EdgeInsets.all(7),
