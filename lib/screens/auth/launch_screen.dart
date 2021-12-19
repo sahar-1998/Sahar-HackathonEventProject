@@ -15,7 +15,7 @@ class _LaunchScreenState extends State<LaunchScreen> {
     super.initState();
     Future.delayed(const Duration(seconds: 3), () {
       // String route = SharedPrefController().loggedIn ? '/OnBoarding': '/Sign_in';
-      Navigator.pushReplacementNamed(context, '/signin_screen');
+      Navigator.pushReplacementNamed(context, '/on_boarding_screen');
 
     });
   }
@@ -25,8 +25,8 @@ class _LaunchScreenState extends State<LaunchScreen> {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        color: Color(0xff253975),
-        child: Padding(
+        color: const Color(0xff253975),
+        child: const Padding(
           padding:  EdgeInsets.only(top: 340, left: 80, right: 80),
           child: Text(
             'Events',

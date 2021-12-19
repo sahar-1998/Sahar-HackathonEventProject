@@ -1,5 +1,6 @@
 import 'package:evemts/prefs/shared_pref_controller.dart';
 import 'package:evemts/screens/auth/login_screen.dart';
+import 'package:evemts/screens/auth/out_boarding_screen.dart';
 import 'package:evemts/screens/events/cat_event.dart';
 import 'package:evemts/screens/events/categoury_screen.dart';
 import 'package:evemts/screens/events/event_screen.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         initialRoute:'/launch_screen' ,
         routes: {
           '/launch_screen' : (context)=> LaunchScreen(),
+          '/on_boarding_screen' : (context) => OutBoardingScreen(),
           '/signin_screen': (context) => Signin(),
           '/categoryScreen' : (context) => CategoryScreen(),
           '/new_event' :(context) =>AddEvent(),
