@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hexcolor/hexcolor.dart';
+
 class EventDetailes extends StatefulWidget {
   const EventDetailes({Key? key}) : super(key: key);
 
@@ -28,52 +29,57 @@ class _EventDetaileState extends State<EventDetailes> {
       body: ListView(
         children: [
           Container(
-            height: 206,
+            height: 260,
             width: 343,
             child: Stack(
               children: [
-                SizedBox(
-                    height: 140,
-                    width: double.infinity,
-                    child: Image.asset(
-                      "images/22.png",
-                      fit: BoxFit.fill,
-                    )),
-                Align(
-                  alignment: AlignmentDirectional.bottomStart,
+                Image.asset(
+                  "images/image.png",
+                  width: double.infinity,
+                  fit: BoxFit.fill,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 10, top: 140),
+                  //alignment: AlignmentDirectional.bottomStart,
                   child: Container(
-                    margin: EdgeInsets.only(
-                        left: 10, right: 40, bottom: 7),
+                    margin: EdgeInsets.only(left: 10, right: 40, bottom: 7),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(7),
                       color: Colors.grey.withOpacity(.5),
                     ),
                     height: 80,
                     width: 90,
-                    padding: EdgeInsets.all(7),
+                    padding: EdgeInsets.all(5),
                     child: Center(
                       child: Column(
                         children: [
-                          Row(
-                            children: [
-                              Icon(Icons.ac_unit),
-                              Text(
-                                "6 Events",
-                                style: TextStyle(color: Colors.white),
-                              )
-                            ],
+                          Container(
+                            color: Colors.grey.withOpacity(.3),
+                            child: Row(
+                              children: [
+                                Icon(Icons.timer, color: Colors.black54,),
+                                Text(
+                                  "2 Hours",
+                                  style: TextStyle(color: Colors.black54),
+                                )
+                              ],
+                            ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 15,
                           ),
-                          Row(
-                            children: [
-                              Icon(Icons.ac_unit),
-                              Text(
-                                "6 Events",
-                                style: TextStyle(color: Colors.white),
-                              )
-                            ],
+                          Container(
+                            color: Colors.grey.withOpacity(.3),
+                            child: Row(
+
+                              children: [
+                                Icon(Icons.architecture_rounded, color: Colors.black54,),
+                                Text(
+                                  "Now",
+                                  style: TextStyle(color: Colors.black54),
+                                )
+                              ],
+                            ),
                           )
                         ],
                       ),
@@ -99,7 +105,7 @@ class _EventDetaileState extends State<EventDetailes> {
           Row(
             children: [
               Padding(
-                padding:  EdgeInsets.only(left: 16),
+                padding: EdgeInsets.only(left: 16),
                 child: Row(
                   children: [
                     Icon(Icons.lock_clock),
@@ -115,7 +121,6 @@ class _EventDetaileState extends State<EventDetailes> {
                 children: [
                   Icon(Icons.date_range),
                   Text('12/12/2020'),
-
                 ],
               ),
               SizedBox(
@@ -126,7 +131,6 @@ class _EventDetaileState extends State<EventDetailes> {
                 children: [
                   Icon(Icons.image),
                   Text('12.00am'),
-
                 ],
               )
             ],
@@ -174,19 +178,19 @@ class _EventDetaileState extends State<EventDetailes> {
             ),
           ),
           Padding(
-            padding:  EdgeInsets.only(top: 4,left: 16,right: 16),
+            padding: EdgeInsets.only(top: 4, left: 16, right: 16),
             child: Container(
               width: 343.w,
               child: Text(
-                'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua',style: TextStyle(fontSize: 15,color: HexColor('#807C94')),),
+                'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua',
+                style: TextStyle(fontSize: 15, color: HexColor('#807C94')),
+              ),
             ),
           ),
           Padding(
-            padding:  EdgeInsets.only(top: 9,left: 45,right: 45),
+            padding: EdgeInsets.only(top: 9, left: 45, right: 45),
             child: Divider(),
           ),
-
-
         ],
       ),
     );

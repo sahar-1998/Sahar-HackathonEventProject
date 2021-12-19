@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class CategoryDetailsScreen extends StatefulWidget {
-
   @override
   _CategoryDetailsScreenState createState() => _CategoryDetailsScreenState();
 }
@@ -20,10 +19,10 @@ class _CategoryDetailsScreenState extends State<CategoryDetailsScreen> {
                 alignment: AlignmentDirectional.bottomCenter,
                 height: 152.h,
                 width: 375.w,
-                color: HexColor('#253975'),
+
                 child: const CircleAvatar(
                   radius: 50,
-                  backgroundImage: AssetImage('images/as.JPG'),
+                  backgroundImage: AssetImage('images/dddd.png',),
                 ),
               ),
             ],
@@ -37,7 +36,7 @@ class _CategoryDetailsScreenState extends State<CategoryDetailsScreen> {
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 22,
-                      color: HexColor('#3E3A57')),
+                      color: Color(0xff3E3A57),),
                 )),
           ),
           Padding(
@@ -45,10 +44,9 @@ class _CategoryDetailsScreenState extends State<CategoryDetailsScreen> {
             child: const Align(
                 alignment: AlignmentDirectional.center,
                 child: Text(
-                  '12 Event',
+                  '3Event',
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 11,
+                      fontSize: 10,
                       color: Colors.red),
                 )),
           ),
@@ -64,71 +62,88 @@ class _CategoryDetailsScreenState extends State<CategoryDetailsScreen> {
             ),
             itemBuilder: (context, index) {
               return Padding(
-                padding:  EdgeInsets.only(top: 5.h,right: 16.w,left: 16.w),
+                padding: EdgeInsets.only(top: 5.h, right: 16.w, left: 16.w),
                 child: Card(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16)),
                   margin: EdgeInsets.symmetric(horizontal: 20),
-                  child: Row(
-                    children: [
-                      Container(
-                          height: 79.h,
-                          width: 97.w,
-                          child: Image.asset('images/as.JPG')),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 10.w, top: 19.h),
-                            child: Container(
-                                height: 15.h,
-                                width: 89.w,
-                                child: Text(
-                                  '12:00am - 2hours',
-                                  style: TextStyle(
-                                      fontSize: 11, color: HexColor('#8E8B9D')),
-                                )),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 10.w),
-                            child: Container(
-                                height: 15.h,
-                                width: 89.w,
-                                child: Text(
-                                  'Event Name',
-                                  style: TextStyle(
-                                      fontSize: 15, color: HexColor('#423E5B')),
-                                )),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 10.w),
-                            child: Container(
-                                height: 15.h,
-                                width: 89.w,
-                                child: Text(
-                                  '12/12/2020',
-                                  style: TextStyle(
-                                      fontSize: 11, color: HexColor('#423E5B')),
-                                )),
-                          ),
-                        ],
-                      ),
-                      Spacer(),
-                      Padding(
-                        padding: EdgeInsets.only(top: 16.h,right: 36.w),
-                        child: Align(
-                          alignment: AlignmentDirectional.topEnd,
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: HexColor('#FBFBFC'),
-                                borderRadius: BorderRadius.circular(4)),
-                            width: 48.w,
-                            height: 20.h,
-                            child: Text('Active'),
-                          ),
+                  child: GestureDetector(
+
+                    child: InkWell(
+                      onTap: (){
+                        Navigator.pushNamed(context, '/event_details');
+                      },
+                      child: Container(
+                        child: Row(
+                          children: [
+                            Container(
+                                height: 79.h,
+                                width: 97.w,
+                                child: Image.asset('images/catdetim.png')),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(left: 10.w, top: 19.h),
+                                  child: Container(
+                                      height: 15.h,
+                                      width: 89.w,
+                                      child: Text(
+                                        '12:00am - 2hours',
+                                        style: TextStyle(
+                                            fontSize: 11, color: HexColor('#8E8B9D')),
+                                      )),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 10.w),
+                                  child: Container(
+                                    height: 15.h,
+                                    width: 89.w,
+                                    child: Text(
+                                      'Event Name',
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          color: HexColor('#423E5B'),
+                                          fontFamily: 'Roboto'),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 10.w),
+                                  child: SizedBox(
+                                      height: 15.h,
+                                      width: 89.w,
+                                      child: const Text(
+                                        '12/12/2020',
+                                        style: TextStyle(
+                                            fontSize: 11, color: Color(0xff253975),fontFamily: 'Roboto'),
+                                      )),
+                                ),
+                              ],
+                            ),
+                            const Spacer(),
+                            Padding(
+                              padding: EdgeInsets.only(top: 16.h, right: 36.w),
+                              child: Align(
+                                alignment: AlignmentDirectional.topEnd,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey.shade400.withOpacity(0.1),
+                                    borderRadius: BorderRadius.circular(4),
+                                  ),
+                                  width: 50,
+                                  height: 22,
+                                  child: const Text(
+                                    '  Active',
+                                    style: TextStyle(color: Color(0xff11A38D)),
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
                         ),
-                      )
-                    ],
+                      ),
+                    ),
                   ),
                 ),
               );
