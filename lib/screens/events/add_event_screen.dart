@@ -89,7 +89,7 @@ class _AddEventState extends State<AddEvent> {
               color: Colors.grey.withOpacity(0.1),
               borderRadius: BorderRadius.circular(15)),
           child: IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_ios,
               color: Color(0xff423D5B),
               size: 18,
@@ -102,14 +102,14 @@ class _AddEventState extends State<AddEvent> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title: Text(
+        title: const Text(
           'New Event',
           style: TextStyle(
               color: Color(0xff3E3A57), fontSize: 18, fontFamily: 'Roboto'),
         ),
       ),
       body: ListView(
-        padding: EdgeInsets.all(15),
+        padding: const EdgeInsets.all(15),
         children: [
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 5),
@@ -125,7 +125,7 @@ class _AddEventState extends State<AddEvent> {
                 hint: 'Enter event name ', controller: eventNameController),
           ),
           Container(
-            padding: EdgeInsets.only(bottom: 5),
+            padding: const EdgeInsets.only(bottom: 5),
             child: Row(
               children: const [
                 Expanded(
@@ -145,11 +145,11 @@ class _AddEventState extends State<AddEvent> {
                   child: TextFormField(
                     readOnly: true,
                     controller: dateController,
-                    style: TextStyle(fontSize: 18.0),
+                    style: const TextStyle(fontSize: 18.0),
                     onTap: _handleDatePicker,
                     decoration: InputDecoration(
                         labelText: 'Date ',
-                        labelStyle: TextStyle(fontSize: 16.0),
+                        labelStyle: const TextStyle(fontSize: 16.0),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10.0))),
                   ),

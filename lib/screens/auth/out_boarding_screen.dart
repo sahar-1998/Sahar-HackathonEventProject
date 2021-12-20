@@ -103,8 +103,9 @@ class _OutBoardingScreenState extends State<OutBoardingScreen> {
                   borderRadius: BorderRadius.circular(16.0),
                 ),
               ),
-              onPressed: () =>
-                  Navigator.pushReplacementNamed(context, '/home_screen'),
+              onPressed: () {
+               Navigator.pushNamed(context, '/signin_screen');
+              },
               child: Text(
                 'Next',
                 style: TextStyle(fontSize: 16.sp),

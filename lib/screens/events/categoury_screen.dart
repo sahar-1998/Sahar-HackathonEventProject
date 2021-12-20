@@ -31,7 +31,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
+            const Text(
               'Categories',
               style: TextStyle(
                 fontSize: 19,
@@ -50,7 +50,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 onPressed: () {
                   Navigator.pushNamed(context, '/new_event');
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.add,
                   color: Color(0xff1B2D49),
                 ),
@@ -67,7 +67,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
           } else if (snapshot.hasData && snapshot.data!.isNotEmpty) {
             _categories = snapshot.data ?? [];
             return GridView.builder(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
               itemCount: _categories.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -119,7 +119,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                   width: 70,
                                   child: Text(
                                     '${_categories[index].eventsCount.toString()} Events',
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         color: Colors.white,
                                         fontSize: 11,
                                         fontFamily: 'Cairo'),
@@ -129,7 +129,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                             ),
                             Text(
                               _categories[index].nameEn,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 12,
                                   fontFamily: 'Roboto',
                                   color: Color(0xff423E5B)),
@@ -164,3 +164,14 @@ class _CategoryScreenState extends State<CategoryScreen> {
     );
   }
 }
+// FutureBuilder<List<Event>>(
+// future: _future,
+// builder: (context, snapshot) {
+// if (snapshot.connectionState == ConnectionState.waiting) {
+// return const Center(child: CircularProgressIndicator());
+// }else if (snapshot.hasData && snapshot.data!.isNotEmpty) {
+// _categories = snapshot.data ?? [];
+// return
+// }
+//
+// ),

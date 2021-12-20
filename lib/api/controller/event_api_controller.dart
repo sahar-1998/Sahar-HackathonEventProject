@@ -14,8 +14,6 @@ import 'package:http/http.dart';
 
 class EventApiController with ApiHelper {
 
-
-
   Future<List<Category>> getCategories() async {
     var url = Uri.parse(ApiSetting.categories);
     var response = await http.get(url, headers: headers);
@@ -28,7 +26,19 @@ class EventApiController with ApiHelper {
     return [];
   }
 
-
+  Future<List<Event>> showEvent() async {
+    var url = Uri.parse(ApiSetting.showEvent);
+    var response = await http.get(url,
+      headers: headers,
+    );
+    print(response.statusCode);
+    if (response.statusCode==200) {
+      var data = jsonDecode(response.body)['list'] as List;
+      List<Event > event = data.map((e) => Event .fromJson(e)).toList();
+      return event;
+    }
+    return [];
+  }
 
   Future<bool> createEvent(BuildContext context, {
       required String name,
@@ -153,18 +163,6 @@ class EventApiController with ApiHelper {
     return false;
   }
 
-  Future<List<Event>> showEvent() async {
-    var url = Uri.parse(ApiSetting.showEvent);
-    var response = await http.get(url,
-      headers: headers,
-    );
-    print(response.statusCode);
-    if (response.statusCode==200) {
-      var data = jsonDecode(response.body)['list'] as List;
-      List<Event > event = data.map((e) => Event .fromJson(e)).toList();
-      return event;
-    }
-    return [];
-  }
+
 
 }
